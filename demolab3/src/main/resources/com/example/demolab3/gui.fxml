@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demolab3.Controller"
+spacing="10" alignment="CENTER">
+    <MenuBar>
+        <Menu text="Home"/>
+        <Menu text="Apps"/>
+        <Menu text="Games"/>
+        <Menu text="Movies"/>
+        <Menu text="Books"/>
+    </MenuBar>
+    <GridPane alignment="CENTER" hgap="20.0" vgap="10.0">
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" layoutX="50.0" layoutY="80.0" text="User Name:"/>
+        <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="nameField" prefWidth="300"/>
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0" layoutX="50.0" layoutY="50.0" text="Email:"/>
+        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="emailField"/>
+        <HBox maxWidth="300" spacing="40" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+            <Button text="Save" onAction="#handleSave" style="-fx-font-size: 12;" prefWidth="120" prefHeight="20"/>
+            <Button text="Load" onAction="#handleLoad" style="-fx-font-size: 12;" prefWidth="120" prefHeight="20"/>
+        </HBox>
+    </GridPane>
+
+    <TableView fx:id="tableView" maxWidth="300">
+        <columns>
+            <TableColumn text="Name" fx:id="nameColumn" prefWidth="150"/>
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>
